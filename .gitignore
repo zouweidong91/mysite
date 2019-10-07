@@ -3,7 +3,7 @@ venv
 jupyter-env
 .ipynb_checkpoints
 logs
-
+*.code-workspace
 *.log
 help/local_*
 
