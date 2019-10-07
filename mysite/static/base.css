@@ -2,7 +2,10 @@
     margin: 0;
     padding: 0;
 }
-div.nav{
+body{
+    margin-top: 120px!important;
+}
+/* div.nav{
     background-color: #eee;
     border-bottom: 1px solid #908282;
     padding: 10px 5px;
@@ -14,4 +17,4 @@ div.nav a{
 }
 a.logo{
     display: inline-block;
-}
+} */
