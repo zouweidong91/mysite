@@ -32,7 +32,7 @@
 * python manage.py makemigrations  # 迁移文件
 * python manage.py migrate   # 同步数据库
 * python manage.py createsuperuser # 创建超级管理员
-* python manage.py runserver # 启动本地服务
+* python manage.py runserver 8000 # 启动本地服务 默认8000端口
 
 
 ## 部署命令
