@@ -1,10 +1,17 @@
 from django.shortcuts import render_to_response, get_object_or_404
+from django.core.paginator import Paginator
 from .models import Blog, BlogType
 # Create your views here.
 
 def blog_list(request):
+    page_num = request.GET.get('page', 1)  #  获取url页面参数
+    blogs_all_list = Blog.objects.all()
+    paginator = Paginator(blogs_all_list, 10)  # 每10页进行分页
+    page_of_blogs = paginator.get_page(page_num)   #  django 自动识别，如果无效直接返回1
+
+
     context = {}
-    context['blogs'] = Blog.objects.all()
+    context['page_of_blogs'] = page_of_blogs
     # print(context)
     context['blog_types'] = BlogType.objects.all()
     return render_to_response('blog/blog_list.html', context)

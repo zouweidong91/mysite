@@ -33,7 +33,14 @@
 * python manage.py migrate   # 同步数据库
 * python manage.py createsuperuser # 创建超级管理员
 * python manage.py runserver 8000 # 启动本地服务 默认8000端口
+* python manage.py shell  # 命令行模式
+    from blog.models import Blog
+    blog = Blog()
+    blog.title = 'XXX'
+    blog.save()
+    此时数据便保存至数据库
 
+    命令行下巧用  dir(var)  help(function)
 
 ## 部署命令
 * pip freeze > requirements.txt
