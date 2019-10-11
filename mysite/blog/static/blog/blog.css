@@ -27,4 +27,8 @@ ul.blog-info-description{
 div.blog-content{
     text-indent: 2em;
 }
+div.paginator{
+    text-align: center; 
+}
+
 /* 放置style样式 */

@@ -137,3 +137,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
 # 静态文件的地址   css js  图片  STATICFILES_DIRS声明static所在的位置
+
+
+# 自定义参数
+EACH_PAGE_BLOGS_NUMBER = 7   
