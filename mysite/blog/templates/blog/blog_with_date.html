@@ -4,6 +4,6 @@
 {% block title %}{{ blog_type.type_name }}{% endblock %}
 
 {% block blog_list_title %}
-    分类：{{ blog_type.type_name }}
+    日期归档：{{ blogs_with_date }}
     <a href="{% url 'blog_list' %}">查看全部博客</a>
 {% endblock %}

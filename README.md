@@ -42,6 +42,7 @@
 
     命令行下巧用  dir(var)  help(function)
 
+* shift + f5 强制刷新
 ## 部署命令
 * pip freeze > requirements.txt
 * pip install -r requirements.txt

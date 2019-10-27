@@ -30,5 +30,7 @@ div.blog-content{
 div.paginator{
     text-align: center; 
 }
-
+div.blog_more{
+    margin-top: 1em;
+}
 /* 放置style样式 */
