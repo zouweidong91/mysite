@@ -8,6 +8,7 @@
 
 ## 初始化数据库和创建超级管理员
 ```
+后台管理http://127.0.0.1:8000/admin 密码 123456  用户名 zwd
 修改settings文件:
     DATABASES = {
         'default': {
@@ -46,3 +47,7 @@
 ## 部署命令
 * pip freeze > requirements.txt
 * pip install -r requirements.txt
+
+
+# setting  文件配置方法  查找
+pypi python  搜索相关包 ckeditor

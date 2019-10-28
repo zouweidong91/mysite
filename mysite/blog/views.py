@@ -3,6 +3,7 @@ from django.core.paginator import Paginator
 from .models import Blog, BlogType
 from django.db.models import Count
 from django.conf import settings
+from datetime import datetime
 # Create your views here.
 each_page_blogs_number = 2
 
@@ -51,11 +52,16 @@ def blog_detail(request, blog_pk):
     '''获取当前博客的详细信息'''
     context = {}
     blog = get_object_or_404(Blog, pk=blog_pk)
+    if not request.COOKIES.get('blog_%s_read'%blog_pk):
+        blog.reader_num += 1
+        blog.save()
     # Blog.object.get(pk = blog_pk) # 获取到具体某一篇博客
     context['previous_blog'] = Blog.objects.filter(create_time__gt=blog.create_time).last()
     context['next_blog'] = Blog.objects.filter(create_time__lt=blog.create_time).first()
     context['blog'] = blog
-    return render_to_response('blog/blog_detail.html', context)
+    response = render_to_response('blog/blog_detail.html', context) # 响应
+    response.set_cookie('blog_%s_read'%blog_pk, 'true')  # 如果不设置过期时间，关闭浏览器cookie即失效
+    return response
 
 def blogs_with_type(request, blog_type_pk):
     blog_type = get_object_or_404(BlogType, pk=blog_type_pk)
