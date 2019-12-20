@@ -9,9 +9,11 @@ each_page_blogs_number = 2
 
 def get_blog_list_common_data(request, blogs_all_list):
     page_num = request.GET.get('page', 1)  #  获取url页面参数
+    print(page_num)
     paginator = Paginator(blogs_all_list, settings.EACH_PAGE_BLOGS_NUMBER)  # 每10页进行分页
     page_of_blogs = paginator.get_page(page_num)   #  django 自动识别，如果无效直接返回1
     current_page_num = page_of_blogs.number  # 获取当前页
+    print(current_page_num,'***')
     # 获取当前页的前后页码各2页
     page_range = list(range(max(current_page_num-2, 1), current_page_num)) + \
                 list(range(current_page_num, min(current_page_num+2, paginator.num_pages) + 1))
