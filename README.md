@@ -50,4 +50,4 @@
 
 
 # setting  文件配置方法  查找
-pypi python  搜索相关包 ckeditor
+pypi python  搜索相关包 ckeditor   
